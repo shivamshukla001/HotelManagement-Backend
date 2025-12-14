@@ -8,6 +8,7 @@ import cors from 'cors';
 dotenv.config();
 const app = express()
 
+const PORT = process.env.PORT || 4000
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // This handles FormData
@@ -38,7 +39,7 @@ app.get('/api/v1/getAllInfo/:id', async (req, res) => {
 // })
 
 
-app.listen(8000, () => {
+app.listen(PORT, () => {
     connectDB();
     console.log(`server is listing at port 8000`);
 
